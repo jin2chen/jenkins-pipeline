@@ -26,3 +26,4 @@ Temporary Items
 .apdisk
 test.groovy
 /vendor/
+/.phpunit*
