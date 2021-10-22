@@ -11,5 +11,11 @@
             "name": "Jin Chen",
             "email": "jin.chen@jinchen.me"
         }
-    ]
+    ],
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    }
 }
