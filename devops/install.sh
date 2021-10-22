@@ -1,13 +1,11 @@
 #!/bin/bash
-set -o errexit
-set -o pipefail
-set -o nounset
-__dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-__root="$(cd "$(dirname "${__dir}")" && pwd)"
-pushd .
+set -e
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/bootstrap.sh"
 
-cd $__root
+pushd .
+# <<<
+cd $PROJECT_HOME
 pwd
 composer install --no-progress --no-ansi --ignore-platform-reqs
-
+# >>>
 popd
