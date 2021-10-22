@@ -7,12 +7,12 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker
-                        .image('jin2chen/php:7.4-fpm-alpine')
-                        .pull()
-                        .inside {
-                            sh './devops/install.sh'
-                        }
+                    def image = docker.image('jin2chen/php:7.4-fpm-alpine')
+                    
+                    image.pull()
+                    image.inside {
+                        sh './devops/install.sh'
+                    }
                 }
             }
         }
