@@ -8,6 +8,7 @@ pushd .
 
 cd $__root
 pwd
-composer install
+composer config repo.packagist composer https://packagist.phpcomposer.com
+composer install --no-progress --no-ansi --ignore-platform-reqs
 
 popd

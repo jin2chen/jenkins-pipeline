@@ -5,10 +5,6 @@ pipeline {
 
     stages {
         stage('Build') {
-            environment {
-                HTTP_PROXY = 'socks5://192.168.0.30:1080'
-            }
-
             steps {
                 script {
                     def image = docker.image('jin2chen/php:7.4-fpm-alpine')
