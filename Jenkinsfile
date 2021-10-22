@@ -18,7 +18,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                script {
+                    def image = docker.image('jin2chen/php:7.4-fpm-alpine')
+
+                    image.pull()
+                    image.inside {
+                        sh './vendor/bin/phpunit --colors=never'
+                    }
+                }
             }
         }
         stage('Deploy') {
