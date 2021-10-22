@@ -15,7 +15,6 @@ pipeline {
 
                     image.pull()
                     image.inside {
-                        sh 'env'
                         sh './devops/install.sh'
                     }
                 }
